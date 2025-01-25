@@ -1,0 +1,143 @@
+#terms {
+  margin-top: 96px;
+  overflow-x: hidden;
+  .fv {
+    background-image: url(../img/img-about-fv.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .container {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      @include sp {
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+    }
+    .fv-txt {
+      padding-left: 40px;
+      border-left: 2px solid white;
+      @include sp {
+        padding-left: 24px;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 700;
+        color: #fafafa;
+        text-shadow: 0px 0px 8px #2e2c2a0d;
+
+        @include sp {
+          font-size: 16px;
+          padding-top: 16px;
+        }
+      }
+      h2 {
+        font-size: 49px;
+        font-weight: 700;
+        color: #fafafa;
+        text-shadow: 0px 0px 8px #2e2c2a0d;
+        line-height: 89px;
+        @include sp {
+          font-size: 36px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+
+  .p-terms {
+    padding-top: 104px;
+    padding-bottom: 104px;
+    background-color: #fafafa;
+    @include sp {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+    .container {
+      .terms-ctn {
+        font-size: 20px;
+        font-weight: 500;
+        color: #333;
+        @include sp {
+          font-size: 16px;
+        }
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 64px;
+        @include sp {
+          margin-top: 36px;
+        }
+      }
+
+      th,
+      td {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+        @include sp {
+          padding-top: 16px;
+          padding-bottom: 16px;
+          font-size: 14px;
+        }
+      }
+
+      th {
+        background-color: #faece1;
+        border: 1px solid #ff6e01;
+        width: 256px;
+        padding-left: 23px;
+        padding-right: 23px;
+
+        @include sp {
+          width: 120px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+
+      .radius-tl {
+        border-radius: 16px 0 0 0;
+      }
+      .radius-tr {
+        border-radius: 0 16px 0 0;
+      }
+      .radius-bl {
+        border-radius: 0 0 16px 0;
+      }
+      .radius-br {
+        border-radius: 0 0 0px 16px;
+      }
+
+      td {
+        border: 1px solid #969696;
+        padding-left: 32px;
+        padding-right: 32px;
+        @include sp {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .red {
+          font-size: 13px;
+          font-weight: 500;
+          color: #ff6e01;
+          line-height: 19px;
+          padding-top: 16px;
+        }
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .important {
+        color: #e53935;
+        font-weight: bold;
+      }
+    }
+  }
+}

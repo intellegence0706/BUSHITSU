@@ -113,7 +113,7 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   // Initialize the slider
-  $('.voice-slider-container').slick({
+  $('.study-slider').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -122,7 +122,7 @@ $(document).ready(function() {
   });
 
   // After the slide initializes and every time it changes
-  $('.voice-slider-container').on('init reInit afterChange', function(event, slick, currentSlide) {
+  $('.study-slider').on('init reInit afterChange', function(event, slick, currentSlide) {
     // 'currentSlide' might be undefined on init/reInit, so we provide a fallback
     var i = (currentSlide ? currentSlide : 0);
 
@@ -136,17 +136,17 @@ $(document).ready(function() {
   // Custom next button for Slick slider
   $('.voice-after-btn').on('click', function(e) {
     e.preventDefault();
-    $('.voice-slider-container').slick('slickNext');
+    $('.study-slider').slick('slickNext');
   });
 
   // Custom previous button for Slick slider
   $('.voice-before-btn').on('click', function(e) {
     e.preventDefault();
-    $('.voice-slider-container').slick('slickPrev');
+    $('.study-slider').slick('slickPrev');
   });
 
   // Initialize the event trigger manually at setup to correct initial state
-  $('.voice-slider-container').slick('setPosition');
+  $('.study-slider').slick('setPosition');
 });
 
 
@@ -190,12 +190,21 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   // Initialize the slider
-  $('.case-slider-container').slick({
+  $('.menu-slider-container').slick({
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+          breakpoint: 768,  // At 768px or greater
+          settings: {
+              slidesToShow: 1,  // Show only one slide
+              slidesToScroll: 1  // Ensure scrolling only one slide
+          }
+      }
+    ]
   });
 
   // After the slide initializes and every time it changes
@@ -233,9 +242,9 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   // Initialize the slider
-  $('.member-slider-container').slick({
+  $('.strenth-slider').slick({
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000, // Autoscroll every second
@@ -249,17 +258,6 @@ $(document).ready(function() {
         }
     ]
   });
-  // Custom next button for Slick slider
-  $('.member-after-btn').on('click', function(e) {
-      e.preventDefault();  // Prevent the default anchor click behavior
-      $('.member-slider-container').slick('slickNext');  // Move to the next slide
-  });
-  // Custom next button for Slick slider
-  $('.member-before-btn').on('click', function(e) {
-    e.preventDefault();  // Prevent the default anchor click behavior
-    $('.member-slider-container').slick('slickPrev');  // Move to the previous slide
-  });
-
 });
 
 $('.hambtn').click(function() {

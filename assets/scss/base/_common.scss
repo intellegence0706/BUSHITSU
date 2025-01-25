@@ -350,6 +350,34 @@ section {
   }
 }
 
+.sec-ttl {
+  width: max-content;
+  margin: auto;
+  .ttl-en {
+    font-size: 39px;
+    font-weight: 700;
+    position: relative;
+    width: max-content;
+    line-height: 56.5px;
+    color: #000000;
+    .ttl-absolute {
+      position: absolute;
+      top: 25px;
+      transform: translateX(-15px);
+      text-wrap: nowrap;
+      @include sp {
+        transform: translateX(-25px);
+      }
+    }
+  }
+  .ttl-jp {
+    font-size: 13px;
+    font-weight: 700;
+    padding-top: 8px;
+    text-align: center;
+  }
+}
+
 #scroll-svg path,
 #scroll-svg circle {
   stroke-dasharray: 1000;
