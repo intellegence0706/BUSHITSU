@@ -341,9 +341,10 @@ section {
     background-color: #ffffff77;
     left: -50%;
     transition: all 0.3s;
+    top: 0;
   }
   &:hover {
-    transform: translateY(5px);
+    transform: translateY(-5px);
     &::before {
       left: 100%;
     }

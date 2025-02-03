@@ -501,9 +501,10 @@ section {
   background-color: rgba(255, 255, 255, 0.4666666667);
   left: -50%;
   transition: all 0.3s;
+  top: 0;
 }
 .sec-more:hover {
-  transform: translateY(5px);
+  transform: translateY(-5px);
 }
 .sec-more:hover::before {
   left: 100%;
@@ -2365,8 +2366,13 @@ body.is-loading .js-cursor {
   border-radius: 16px;
   background: var(--g-color-white);
 }
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-swiper {
+    height: 780px;
+  }
+}
 #top .p-service .container .sec-main .swiper-pagination {
-  background: #3B3B3B;
+  background: #3b3b3b;
   width: 40px;
   border-radius: 20px;
   display: flex;
@@ -2381,7 +2387,7 @@ body.is-loading .js-cursor {
   width: 20px;
   height: 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--g-color-white);
   opacity: 1;
   font-family: "Noto Sans JP", sans-serif;
@@ -2392,37 +2398,85 @@ body.is-loading .js-cursor {
   margin: 10px 0;
 }
 #top .p-service .container .sec-main .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #007aff;
+  color: #ff6f56;
+  background: #ff6f56;
 }
 #top .p-service .container .sec-main .service-item {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 30px;
+  padding: 50px;
   background-color: white;
+  position: relative;
+  z-index: 10;
 }
 @media screen and (max-width: 769px) {
   #top .p-service .container .sec-main .service-item {
     flex-direction: column;
-    gap: 36px;
+    gap: 16px;
+    padding: 24px 16px;
+    justify-content: flex-start;
+  }
+}
+#top .p-service .container .sec-main .service-item figure {
+  max-width: 516px;
+}
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-item figure {
+    max-width: 350px;
+  }
+}
+#top .p-service .container .sec-main .service-item figure img {
+  width: 90%;
+}
+#top .p-service .container .sec-main .service-item .item-main {
+  max-width: 640px;
+  width: 100%;
+}
+#top .p-service .container .sec-main .service-item .item-main .mark {
+  font-size: 90px;
+  font-weight: 500;
+  text-shadow: -2px -2px 0 #e4511c, 2px -2px 0 #e4511c, -2px 2px 0 #e4511c, 2px 2px 0 #e4511c;
+  text-align: right;
+  color: white;
+  line-height: 92px;
+}
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-item .item-main .mark {
+    font-size: 56px;
+    line-height: 36px;
   }
 }
 #top .p-service .container .sec-main .service-item .item-main .item-ttl {
-  font-size: 24px;
+  padding-top: 12px;
+  padding-bottom: 24px;
+  font-size: 36px;
   font-weight: 700;
-  color: white;
-  text-shadow: -1px -1px 0 #e4511c, 1px -1px 0 #e4511c, -1px 1px 0 #e4511c, 1px 1px 0 #e4511c;
+  border-bottom: #000000 2px solid;
+  color: #e4511c;
+}
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-item .item-main .item-ttl {
+    font-size: 24px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
 }
 #top .p-service .container .sec-main .service-item .item-main .item-ctn {
   font-size: 16px;
   font-weight: 500;
   color: #3b3b3b;
-  padding-top: 16px;
+  padding-top: 32px;
+  line-height: 50px;
+}
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-item .item-main .item-ctn {
+    line-height: 36px;
+  }
 }
 #top .p-service .container .sec-main .service-item .item-main .sec-more {
-  margin-top: 16px;
+  margin-top: 64px;
 }
 @media screen and (max-width: 769px) {
   #top .p-service .container .sec-main .service-item .item-main .sec-more {
@@ -2430,17 +2484,34 @@ body.is-loading .js-cursor {
   }
 }
 #top .p-service .container .sec-main .service-item .sec-more {
-  margin-top: 0;
+  margin-top: 64px;
+}
+@media screen and (max-width: 769px) {
+  #top .p-service .container .sec-main .service-item .sec-more {
+    margin-top: 0;
+  }
+}
+#top .p-service .container .sec-main .service-item .bg-item {
+  position: absolute;
+  top: -22px;
+  left: -9px;
+  z-index: -1;
+}
+#top .p-service .container .sec-main .service-item:nth-child(2) .item-main .mark {
+  text-shadow: -2px -2px 0 #d4d122, 2px -2px 0 #d4d122, -2px 2px 0 #d4d122, 2px 2px 0 #d4d122;
 }
 #top .p-service .container .sec-main .service-item:nth-child(2) .item-main .item-ttl {
-  text-shadow: -1px -1px 0 #bab70e, 1px -1px 0 #bab70e, -1px 1px 0 #bab70e, 1px 1px 0 #bab70e;
+  color: #d4d122;
 }
 #top .p-service .container .sec-main .service-item:nth-child(2) .item-main .sec-more {
   margin-top: 16px;
   background: #d4d122;
 }
+#top .p-service .container .sec-main .service-item:nth-child(3) .item-main .mark {
+  text-shadow: -2px -2px 0 #14a67f, 2px -2px 0 #14a67f, -2px 2px 0 #14a67f, 2px 2px 0 #14a67f;
+}
 #top .p-service .container .sec-main .service-item:nth-child(3) .item-main .item-ttl {
-  text-shadow: -1px -1px 0 #14a67f, 1px -1px 0 #14a67f, -1px 1px 0 #14a67f, 1px 1px 0 #14a67f;
+  color: #14a67f;
 }
 #top .p-service .container .sec-main .service-item:nth-child(3) .item-main .sec-more {
   margin-top: 16px;
@@ -2679,6 +2750,8 @@ body.is-loading .js-cursor {
   font-weight: 700;
   padding-top: 8px;
   line-height: 23px;
+  display: block;
+  color: #333333;
 }
 @media screen and (max-width: 769px) {
   #top .p-news .container .news-main .news-item .item-ctn .ttl {
@@ -2690,6 +2763,8 @@ body.is-loading .js-cursor {
   font-weight: 500;
   color: #333333;
   line-height: 20px;
+  display: block;
+  padding-top: 12px;
 }
 @media screen and (max-width: 769px) {
   #top .p-news .container .news-main .news-item .item-ctn .detail {
@@ -2754,8 +2829,6 @@ body.is-loading .js-cursor {
 }
 #top .p-member .container {
   max-width: 1240px;
-  margin-right: 0;
-  margin-left: auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -2763,11 +2836,13 @@ body.is-loading .js-cursor {
   position: relative;
   z-index: 10;
   padding-left: 0;
+  transform: translateX(96px);
 }
 @media screen and (max-width: 1025px) {
   #top .p-member .container {
     padding-right: 16px;
     padding-left: 16px;
+    transform: unset;
   }
 }
 @media screen and (max-width: 769px) {
@@ -2775,6 +2850,7 @@ body.is-loading .js-cursor {
     padding-right: 16px;
     padding-left: 16px;
     flex-direction: column;
+    transform: unset;
   }
 }
 #top .p-member .container .sec-ttl {
@@ -7320,56 +7396,52 @@ body.is-loading .js-cursor {
 }
 
 #policy {
-  margin-top: 96px;
   overflow-x: hidden;
 }
-#policy .fv {
-  background-image: url(../img/img-about-fv.png);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#policy .fv .container {
-  padding-top: 80px;
-  padding-bottom: 80px;
+#policy .p-fv {
+  position: relative;
+  padding-top: 47px;
+  padding-bottom: 100px;
 }
 @media screen and (max-width: 769px) {
-  #policy .fv .container {
-    padding-top: 64px;
-    padding-bottom: 64px;
+  #policy .p-fv {
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
 }
-#policy .fv .fv-txt {
-  padding-left: 40px;
-  border-left: 2px solid white;
+#policy .p-fv .container {
+  max-width: 1120px;
+}
+#policy .p-fv .container h2 {
+  font-size: 64px;
+  font-weight: 700;
+  color: #e4511c;
 }
 @media screen and (max-width: 769px) {
-  #policy .fv .fv-txt {
-    padding-left: 24px;
+  #policy .p-fv .container h2 {
+    font-size: 40px;
   }
 }
-#policy .fv .fv-txt p {
+#policy .p-fv .container p {
   font-size: 20px;
   font-weight: 700;
-  color: #fafafa;
-  text-shadow: 0px 0px 8px rgba(46, 44, 42, 0.0509803922);
+  color: #3b3b3b;
 }
 @media screen and (max-width: 769px) {
-  #policy .fv .fv-txt p {
+  #policy .p-fv .container p {
     font-size: 16px;
   }
 }
-#policy .fv .fv-txt h2 {
-  font-size: 61px;
-  font-weight: 700;
-  color: #fafafa;
-  text-shadow: 0px 0px 8px rgba(46, 44, 42, 0.0509803922);
-  line-height: 89px;
+#policy .p-fv #scroll-svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(335deg);
 }
 @media screen and (max-width: 769px) {
-  #policy .fv .fv-txt h2 {
-    font-size: 36px;
-    line-height: 48px;
+  #policy .p-fv #scroll-svg {
+    max-width: 150px;
+    top: -70px;
   }
 }
 #policy .p-policy {
