@@ -185,7 +185,7 @@ section {
 }
 
 .container {
-  max-width: 928px;
+  max-width: 1080px;
   width: 100%;
   margin: auto;
   padding-right: 16px;
@@ -444,6 +444,24 @@ section {
 }
 
 #scroll-svg-media circle {
+  stroke-dasharray: 0; /* Approximately the circumference of the circle */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 300ms ease, opacity 300ms ease;
+  opacity: 0; /* Start fully transparent */
+}
+
+#scroll-svg-about path,
+#scroll-svg-about circle {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#scroll-svg-about circle {
+  transition: fill 0.3s ease;
+}
+
+#scroll-svg-about circle {
   stroke-dasharray: 0; /* Approximately the circumference of the circle */
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 300ms ease, opacity 300ms ease;

@@ -70,7 +70,13 @@
   .p-bar {
     position: relative;
     padding-top: 148px;
-    background: linear-gradient(-16deg, #222222 0%, #454545 65%, #464646 100%);
+    background: linear-gradient(
+      143.68deg,
+      #eb612c 9.85%,
+      #ff925c 44.87%,
+      #ef7756 90.15%
+    );
+
     @include sp {
       padding-top: 64px;
     }
@@ -250,83 +256,79 @@
   .p-event {
     padding-top: 112px;
     position: relative;
-    background: linear-gradient(-16deg, #222222 0%, #454545 65%, #464646 100%);
+
     @include sp {
       padding-top: 64px;
     }
     .container {
       max-width: 1120px;
-      .event {
-        .sec-ttl {
-          .ttl-en {
-            color: white;
-            @include sp {
-              .ttl-absolute {
-                transform: translateX(-60px);
-              }
-            }
-          }
-          .ttl-jp {
-            color: white;
-          }
-        }
-        .event-main {
-          padding-top: 100px;
-          display: flex;
+      // .event {
+      //   .sec-ttl {
+      //     .ttl-en {
+      //       color: white;
+      //       @include sp {
+      //         .ttl-absolute {
+      //           transform: translateX(-60px);
+      //         }
+      //       }
+      //     }
+      //     .ttl-jp {
+      //       color: white;
+      //     }
+      //   }
+      //   .event-main {
+      //     padding-top: 100px;
+      //     display: flex;
 
-          align-items: center;
-          justify-content: center;
-          @include sp {
-            flex-direction: column;
-            gap: 24px;
-          }
-          figure {
-            max-width: 760px;
-            transform: translateX(-300px);
-            @include sp {
-              transform: translateX(0);
-            }
-          }
-          .event-ctn {
-            max-width: 385px;
-            .ttl {
-              font-size: 32px;
-              font-weight: 700;
-              color: white;
-              @include sp {
-                font-size: 25px;
-              }
-            }
-            .ctn {
-              font-size: 16px;
-              font-weight: 700;
-              color: white;
-              padding-top: 32px;
-            }
-            .lists {
-              margin-top: 32px;
-              padding: 32px;
-              background-color: #d9d9d9;
-              border-radius: 24px;
-              font-size: 16px;
-              font-weight: 700;
-              color: #00042d;
-            }
-          }
-        }
-      }
+      //     align-items: center;
+      //     justify-content: center;
+      //     @include sp {
+      //       flex-direction: column;
+      //       gap: 24px;
+      //     }
+      //     figure {
+      //       max-width: 760px;
+      //       transform: translateX(-300px);
+      //       @include sp {
+      //         transform: translateX(0);
+      //       }
+      //     }
+      //     .event-ctn {
+      //       max-width: 385px;
+      //       .ttl {
+      //         font-size: 32px;
+      //         font-weight: 700;
+      //         color: white;
+      //         @include sp {
+      //           font-size: 25px;
+      //         }
+      //       }
+      //       .ctn {
+      //         font-size: 16px;
+      //         font-weight: 700;
+      //         color: white;
+      //         padding-top: 32px;
+      //       }
+      //       .lists {
+      //         margin-top: 32px;
+      //         padding: 32px;
+      //         background-color: #d9d9d9;
+      //         border-radius: 24px;
+      //         font-size: 16px;
+      //         font-weight: 700;
+      //         color: #00042d;
+      //       }
+      //     }
+      //   }
+      // }
 
       .address {
-        padding-top: 104px;
-        @include sp {
-          padding-top: 64px;
-        }
         .sec-ttl {
           .ttl-en {
-            color: white;
+            color: #222222;
           }
           .ttl-jp {
-            color: white;
+            color: #222222;
           }
         }
         .address-main {
@@ -346,7 +348,7 @@
             .ttl {
               font-size: 32px;
               font-weight: 700;
-              color: white;
+              color: #222222;
               @include sp {
                 font-size: 25px;
               }
@@ -355,7 +357,7 @@
               padding-top: 32px;
               font-size: 16px;
               font-weight: 700;
-              color: white;
+              color: #222222;
             }
             .lists {
               padding-top: 80px;
@@ -365,7 +367,7 @@
               .list-ttl {
                 font-size: 32px;
                 font-weight: 700;
-                color: white;
+                color: #222222;
                 @include sp {
                   font-size: 25px;
                 }
@@ -400,7 +402,7 @@
     .banner {
       margin-top: 126px;
       height: 468px;
-      background-image: url(../img/img-banner.png);
+      background-image: url(../img/img-banner_1.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -414,6 +416,7 @@
       left: 0;
       transform: rotate(85deg);
       top: 33%;
+      z-index: -1;
       @include sp {
         left: 60%;
         transform: rotate(85deg);

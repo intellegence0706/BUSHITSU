@@ -38,6 +38,17 @@
         }
       }
     }
+    .fv-absholute {
+      position: absolute;
+      bottom: 72px;
+      right: 75px;
+      @include sp {
+        bottom: 30px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 50px;
+      }
+    }
   }
 
   .p-about {
@@ -52,13 +63,21 @@
       /* White at 75% */ #efefef 100% /* Light gray at 100% */
     );
     position: relative;
+    background-image: url(../img/bg-about.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 101%;
     @include sp {
       padding-top: 64px;
       padding-bottom: 64px;
+      background-position: 72% 100%;
+      background-size: 100%;
     }
     .container {
       .sec-ctn {
         max-width: 527px;
+        font-weight: normal;
+        text-shadow: 0px 0px 9.1px #ffffff;
       }
     }
     #scroll-svg {
@@ -88,9 +107,14 @@
       padding-bottom: 64px;
     }
     .container {
+      max-width: 1280px;
       .sec-ttl {
+        padding-left: 105px;
+        margin: unset;
         @include sp {
           text-align: center;
+          padding-left: 0;
+          width: 100%;
         }
         .sec-ttl-jp {
           color: white;
@@ -98,6 +122,8 @@
         .sec-ctn {
           color: white;
           padding-top: 10px;
+          max-width: 929px;
+          font-weight: normal;
           @include sp {
             text-align: left;
           }
@@ -186,7 +212,7 @@
       padding-bottom: 64px;
     }
     .container {
-      max-width: 1024px;
+      max-width: 1280px;
       .sec-ttl {
         margin-left: 58px;
         margin-right: auto;
@@ -196,56 +222,32 @@
         }
       }
       .result-main {
-        padding-top: 64px;
         position: relative;
         z-index: 5;
         .result-slider-container {
-          position: relative;
-          .slick-list {
-            overflow: visible;
-          }
-          .slick-slide {
-            padding-right: 58px;
-            padding-left: 58px;
-            @include sp {
-              padding-right: 36px;
-              padding-left: 36px;
-            }
-          }
+          padding-top: 32px;
           .slider-items {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: stretch;
-            justify-content: space-between;
-            gap: 24px;
-            @include sp {
-              grid-template-columns: 1fr;
+            transform: translateX(-8%);
+            .slick-prev,
+            .slick-next {
+              display: none !important;
             }
-            .result-item {
-              width: 100%;
-              max-width: 293px;
-              background-color: white;
-              border-radius: 12px;
-              box-shadow: 0px 4px 4px #0000003f;
-              padding: 24px;
-              @include sp {
-                max-width: unset;
-              }
-              h5 {
-                font-size: 16px;
-                font-weight: 700;
-                color: #e4511c;
-              }
-              figure {
-                width: 100%;
-                margin-top: 16px;
-              }
-              p {
-                padding-top: 8px;
-                font-size: 13px;
-                font-weight: 500;
-                color: #000;
-              }
+            .logo-item {
+              padding-right: 12px;
+              padding-left: 12px;
+            }
+          }
+
+          .slider-items-right {
+            padding-top: 24px;
+            transform: translateX(8%);
+            .slick-prev,
+            .slick-next {
+              display: none !important;
+            }
+            .logo-item {
+              padding-right: 12px;
+              padding-left: 12px;
             }
           }
         }
@@ -333,13 +335,11 @@
   }
 
   .p-news {
-    padding-top: 104px;
     padding-bottom: 104px;
     position: relative;
     background-color: #fafafa;
 
     @include sp {
-      padding-top: 0;
       padding-bottom: 64px;
     }
     .container {
@@ -360,12 +360,16 @@
 
       .sec-ttl {
         max-width: 294px;
+        margin: unset;
+        padding-top: 35px;
         @include sp {
           max-width: unset;
           width: 100%;
           text-align: center;
         }
         .sec-ctn {
+          font-weight: 500;
+
           @include sp {
             text-align: left;
           }
@@ -377,13 +381,16 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        width: 100%;
         .news-item {
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 32px;
           padding: 24px 32px;
           border-bottom: 1px solid;
+          max-width: 737px;
+          width: 100%;
           @include sp {
             gap: 24px;
             flex-direction: column;
@@ -396,10 +403,6 @@
             }
           }
           .item-ctn {
-            max-width: 383px;
-            @include sp {
-              max-width: unset;
-            }
             .date {
               font-size: 16px;
               font-weight: 700;
@@ -469,6 +472,56 @@
         max-width: 120px;
         left: unset;
       }
+    }
+  }
+
+  .p-member {
+    padding-top: 0;
+    padding-bottom: 104px;
+    background-color: #fafafa;
+    @include sp {
+      padding-bottom: 64px;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin-right: 0;
+      margin-left: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-right: 0;
+      position: relative;
+      z-index: 10;
+      padding-left: 0;
+      @include responsive(1025px) {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+      @include sp {
+        padding-right: 16px;
+        padding-left: 16px;
+        flex-direction: column;
+      }
+      .sec-ttl {
+        max-width: 356px;
+        margin: unset;
+      }
+      .member-main {
+        figure {
+          max-width: 805px;
+          width: 100%;
+        }
+      }
+    }
+
+    #scroll-svg-media {
+      max-width: 200px;
+      position: absolute;
+      bottom: -34px;
+      right: 50%;
+      z-index: 1;
+      transform: rotate(2deg);
     }
   }
 
@@ -555,13 +608,11 @@
     padding-top: 92px;
     padding-bottom: 88px;
 
-    background: linear-gradient(
-      -95deg,
-      /* Direction can be adjusted */ #d13d29 0%,
-      /* Light gray at 0% */ #ef8624 35%,
-      /* White at 30% */ #f46c3a 69%,
-      /* Light gray at 53% */ #e76c0b 100%
-    );
+    background-image: url(../img/bg-recruit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     @include sp {
       padding-top: 64px;
       padding-bottom: 64px;

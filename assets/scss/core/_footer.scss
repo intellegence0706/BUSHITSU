@@ -45,6 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
     @include sp {
       flex-direction: column;
       justify-content: center;
@@ -54,7 +55,7 @@
       max-width: 502px;
       width: 100%;
       padding: 30px 45px;
-      background-color: #ffffffb8;
+      background-color: rgba($color: #fff, $alpha: 0.9);
       @include sp {
         padding: 20px 16px;
       }
@@ -88,7 +89,7 @@
       }
       .sec-more {
         border: unset;
-        margin-top: 10px;
+        margin-top: 32px;
         background: #e4511c;
         margin-right: auto;
         margin-left: auto;

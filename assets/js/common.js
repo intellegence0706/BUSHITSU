@@ -46,6 +46,15 @@ $(function() {
   });
 });
 
+$('.view_more').click(function() {
+  if ($(this).text().trim() === 'View More +') {
+    $(this).text('Less More -');
+  } else {
+      $(this).text('View More +');
+  }
+  $(this).closest('.item-main').find('.ctn').toggleClass('more');
+});
+
 
 
 
@@ -83,22 +92,47 @@ $('.slide-navi-btns__right').click(function() {
 
 $(document).ready(function() {
   // Initialize the slider
-  $('.result-slider-container').slick({
+  $('.slider-items').slick({
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Autoscroll every second
+    autoplaySpeed: 0, // Set to 0 for continuous effect
+    speed: 5000, // Duration of the animation, making it slower for a continuous feel
+    cssEase: 'linear', // This changes the easing function to a constant speed
     responsive: [
         {
-            breakpoint: 768,  // At 768px or greater
+            breakpoint: 768,
             settings: {
-                slidesToShow: 1,  // Show only one slide
-                slidesToScroll: 1  // Ensure scrolling only one slide
+                slidesToShow: 2,
+                slidesToScroll: 1
             }
         }
     ]
   });
+
+  $('.slider-items-right').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0, // Set to 0 for continuous effect
+    speed: 5000, // Duration of the animation, making it slower for a continuous feel
+    cssEase: 'linear', // This changes the easing function to a constant speed
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        }
+    ]
+  });
+
+
+
+
   // Custom next button for Slick slider
   $('.after-btn').on('click', function(e) {
       e.preventDefault();  // Prevent the default anchor click behavior
@@ -534,6 +568,62 @@ $(document).ready(function() {
           animated = true; // Set the flag so animation runs only once
 
           $('#scroll-svg-media circle').each(function() {
+              var path = $(this);
+              var pathLength = 523; // Pre-calculated circumference of the circle
+              path.css({
+                  'stroke-dasharray': pathLength,
+                  'stroke-dashoffset': pathLength
+              }).animate({
+                  'stroke-dashoffset': 0
+              }, 300); // Animate over 300 milliseconds
+          });
+      }
+  }, {
+      offset: '75%' // Trigger when the SVG is 75% into the viewport
+  });
+});
+
+
+
+// ---------- svg Animation ------------
+$(document).ready(function() {
+  var animated = false; // Flag to ensure animation runs only once
+
+  $('#scroll-svg-about').waypoint(function(direction) {
+      if (!animated) {
+          animated = true; // Set the flag so animation runs only once
+
+          $('#scroll-svg-about path').each(function() {
+              var path = $(this);
+              var pathLength = path[0].getTotalLength();
+              path.css({
+                  'stroke-dasharray': pathLength,
+                  'stroke-dashoffset': pathLength
+              }).animate({
+                  'stroke-dashoffset': 0
+              }, 300); // Animate over 300 milliseconds
+          });
+
+          $('#scroll-svg-about circle').css({
+              'opacity': 0 // Initially hide the circle
+          }).animate({
+              'opacity': 1 // Animate to full visibility
+          }, 300);
+      }
+  }, {
+      offset: '75%' // Trigger when the SVG is 75% into the viewport
+  });
+});
+
+
+$(document).ready(function() {
+  var animated = false;  // Flag to ensure animation runs only once
+
+  $('#scroll-svg-about').waypoint(function(direction) {
+      if (!animated) {
+          animated = true; // Set the flag so animation runs only once
+
+          $('#scroll-svg-about circle').each(function() {
               var path = $(this);
               var pathLength = 523; // Pre-calculated circumference of the circle
               path.css({
