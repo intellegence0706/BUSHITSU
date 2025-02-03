@@ -11,6 +11,14 @@ gsap.ticker.add((time)=>{
 gsap.ticker.lagSmoothing(0);
 
 $(window).on("load", function () {
+  setTimeout(() => {
+    $('.loading-img').addClass('loadingimgmove');
+    $('.loading-txt').addClass('loadingtxtmove');
+    setTimeout(() => {
+      $('.loading').addClass('hidden');
+    }, 700);
+  }, 1000);
+
   setTimeout(function () {
       const target = document.querySelectorAll(".js-io");
       const targetArray = Array.prototype.slice.call(target);
@@ -638,4 +646,3 @@ $(document).ready(function() {
       offset: '75%' // Trigger when the SVG is 75% into the viewport
   });
 });
-
