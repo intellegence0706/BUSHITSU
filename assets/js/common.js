@@ -646,3 +646,14 @@ $(document).ready(function() {
       offset: '75%' // Trigger when the SVG is 75% into the viewport
   });
 });
+
+var serviceSwiper = new Swiper(".service-swiper", {
+  direction: "vertical",
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">0' + (index + 1) + "</span>";
+    },
+  },
+});

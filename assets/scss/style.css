@@ -2360,6 +2360,41 @@ body.is-loading .js-cursor {
   flex-direction: column;
   padding-top: 36px;
 }
+#top .p-service .container .sec-main .service-swiper {
+  height: 600px;
+  border-radius: 16px;
+  background: var(--g-color-white);
+}
+#top .p-service .container .sec-main .swiper-pagination {
+  background: #3B3B3B;
+  width: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 12px 0;
+  right: auto;
+  left: 14px;
+}
+#top .p-service .container .sec-main .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--g-color-white);
+  opacity: 1;
+  font-family: "Noto Sans JP", sans-serif;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+#top .p-service .container .sec-main .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
 #top .p-service .container .sec-main .service-item {
   width: 100%;
   display: flex;
@@ -2367,7 +2402,6 @@ body.is-loading .js-cursor {
   justify-content: space-between;
   padding: 28px 30px;
   background-color: white;
-  border-radius: 16px;
 }
 @media screen and (max-width: 769px) {
   #top .p-service .container .sec-main .service-item {
